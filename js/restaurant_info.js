@@ -1,3 +1,15 @@
+/**
+ * PWA service worker.
+ */
+if (navigator.serviceWorker) {
+  // register sw
+  navigator.serviceWorker.register('sw.js')
+            .catch(console.error);
+}
+/**
+* end service worker.
+*/
+
 let restaurant;
 var map;
 
@@ -101,7 +113,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
